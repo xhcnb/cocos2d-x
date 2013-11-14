@@ -597,6 +597,8 @@ Developers:
         
     bmanGH
         Use gl caching functions in TexturePVR::createGLTexture()
+        Configuration of VAO in runtime
+        Add setUniformLocationWithMatrix2fv, setUniformLocationWithMatrix3fv mothed into GLProgram class
         
     metadao
         make create_project.py more pythonic and fix some typoes
@@ -642,12 +644,16 @@ Developers:
     ledyba
         Fixed a bug that EventListeners can't be removed sometimes.
         Fixed a bug that the data size has to be specified when parsing XML using TinyXML.
+        Closed X display after getting DPI on Linux.
         
     Luis Parravicini (luisparravicini)
         Fixed typos in create_project.py.
         
     xhcnb
         Device::setAccelerometerEnabled needs to be invoked before adding ACC listener.
+        
+    bopohaa
+        Fixed a bug that Webp test crashes.
         
 Retired Core Developers:
     WenSheng Yang

@@ -79,6 +79,15 @@ void TextureCache::destroyInstance()
 {
 }
 
+TextureCache * TextureCache::sharedTextureCache() 
+{
+    return Director::getInstance()->getTextureCache();
+}
+
+void TextureCache::purgeSharedTextureCache() 
+{ 
+}
+
 const char* TextureCache::description() const
 {
     return String::createWithFormat("<TextureCache | Number of textures = %lu>", _textures.size() )->getCString();
@@ -441,7 +450,7 @@ void TextureCache::dumpCachedTextureInfo() const
         Texture2D* tex = it->second;
         unsigned int bpp = tex->getBitsPerPixelForFormat();
         // Each texture takes up width * height * bytesPerPixel bytes.
-        unsigned int bytes = tex->getPixelsWide() * tex->getPixelsHigh() * bpp / 8;
+        long bytes = tex->getPixelsWide() * tex->getPixelsHigh() * bpp / 8;
         totalBytes += bytes;
         count++;
         log("cocos2d: \"%s\" rc=%lu id=%lu %lu x %lu @ %ld bpp => %lu KB",
